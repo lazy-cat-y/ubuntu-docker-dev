@@ -40,5 +40,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER developer
 
+RUN rm -rf ~/.fzf && \ 
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf  && \ 
+    ~/.fzf/install --all
+
 CMD [ "/bin/bash" ]
 
